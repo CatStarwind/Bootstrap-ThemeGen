@@ -1,0 +1,23 @@
+{
+  "name": "bootstrap-themegen",
+  "version": "1.0.0",
+  "description": "Bootstrap Theming",
+  "main": "",
+  "scripts": {
+    "css": "npm-run-all css-lint css-compile css-prefix css-minify",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/custom.scss css/custom.css",
+    "css-prefix": "postcss --config build/postcss.config.js --replace \"css/*.css\" \"!css/*.min.css\"",
+    "css-minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output css/custom.min.css css/custom.css",
+    "css-lint": "stylelint \"scss/custom.scss\""
+  },
+  "author": "CatStarwind",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2",
+    "stylelint": "^10.0.1"
+  }
+}
